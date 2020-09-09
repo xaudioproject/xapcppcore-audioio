@@ -1,0 +1,36 @@
+#
+#  Copyright 2019 - 2020 The XOrange Studio. All rights reserved.
+#  Use of this source code is governed by a BSD-style license that can be
+#  found in the LICENSE.md file.
+#
+
+#
+#  CMake.
+#
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+*.tcl
+
+# Internal.
+/internal/*
+*.bak
+*.old
+
+# VSCode.
+/.vscode/*
+
+# Output binary.
+/bin/*
+!/bin/.placeholder
+/build/*
+/lib/*
+!/lib/.placeholder
