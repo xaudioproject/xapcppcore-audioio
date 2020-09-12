@@ -68,7 +68,7 @@ int main() {
     //
     //  Player.
     //
-    printf("Start to play...");
+    printf("Start to play...\n");
     std::unique_ptr<xap::audioio::PlayerFactory> player_factory = 
         std::make_unique<xap::audioio::PlayerFactory>();
 
