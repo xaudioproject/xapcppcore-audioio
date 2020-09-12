@@ -12,5 +12,7 @@
 //
 #include <xap/audioio/device.h>
 #include <xap/audioio/error.h>
+#include <xap/audioio/player.h>
+#include <xap/audioio/recorder.h>
 
 #endif  //  #ifndef XAP_AUDIOIO_ALL_H__

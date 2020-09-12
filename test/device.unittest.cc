@@ -18,7 +18,7 @@ void load_input_devices() {
     std::shared_ptr<xap::audioio::DeviceManager> mgr = 
         xap::audioio::DeviceManager::load_shared_instance();
     
-    std::vector<xap::audioio::InputDevice> input_devices =
+    const std::vector<const xap::audioio::InputDevice> input_devices =
         mgr->load_all_input_devices();
 
     xap::test::assert_ok(
@@ -46,7 +46,7 @@ void load_input_devices() {
 void load_output_devices() {
     std::shared_ptr<xap::audioio::DeviceManager> mgr = 
         xap::audioio::DeviceManager::load_shared_instance();
-    std::vector<xap::audioio::OutputDevice> output_devices = 
+    const std::vector<const xap::audioio::OutputDevice> output_devices = 
         mgr->load_all_output_devices();
 
     xap::test::assert_ok(

@@ -25,6 +25,8 @@ namespace audioio {
 typedef struct InputDevice_ {
     int64_t device_id;
     std::string name;
+    double default_low_latency;
+    double defalut_high_latency;
     bool is_default;
 } InputDevice;
 
@@ -34,6 +36,8 @@ typedef struct InputDevice_ {
 typedef struct OutputDevice_ {
     int64_t device_id;
     std::string name;
+    double default_low_latency;
+    double defalut_high_latency;
     bool is_default;
 } OutputDevice;
 
@@ -89,7 +93,8 @@ public:
      *  @return
      *      The input devices vector.
      */
-    std::vector<xap::audioio::InputDevice> load_all_input_devices();
+    const std::vector<const xap::audioio::InputDevice> 
+    load_all_input_devices();
 
     /**
      *  Load all valid output devices.
@@ -109,7 +114,54 @@ public:
      *  @return
      *      The output devices vector.
      */
-    std::vector<xap::audioio::OutputDevice> load_all_output_devices();
+    const std::vector<const xap::audioio::OutputDevice> 
+    load_all_output_devices();
+
+    /**
+     *  Load default input device.
+     * 
+     *  @throw
+     *      Raised in the following situations:
+     *  
+     *          - xap::audioio::ERROR_NODEVICE:
+     *              Raised if cannot get default input device.
+     * 
+     *          - xap::audioio::ERROR_PORTAUDIOCALL:
+     *              Raised if PortAudio calling was failed.
+     * 
+     *          - xap::audioio::ERROR_ALLOC:
+     *              Raised if memory allocation was failed.
+     * 
+     *          - xap::audioio::ERROR_SYSTEMCALL:
+     *              Raised if system (lock) calling was failed.
+     * 
+     *  @return
+     *      The default input device.
+     */
+    const xap::audioio::InputDevice load_default_input_device();
+
+    /**
+     *  Load default output device.
+     * 
+     *  @throw
+     *      Raised in the following situations:
+     *  
+     *          - xap::audioio::ERROR_NODEVICE:
+     *              Raised if cannot get default output device.
+     * 
+     *          - xap::audioio::ERROR_PORTAUDIOCALL:
+     *              Raised if PortAudio calling was failed.
+     * 
+     *          - xap::audioio::ERROR_ALLOC:
+     *              Raised if memory allocation was failed.
+     * 
+     *          - xap::audioio::ERROR_SYSTEMCALL:
+     *              Raised if system (lock) calling was failed.
+     * 
+     *  @return
+     *      The default output device.
+     */
+    const xap::audioio::OutputDevice load_default_output_device();
 
 private:
     //

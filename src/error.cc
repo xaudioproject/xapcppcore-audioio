@@ -7,6 +7,8 @@
 //
 //  Imports.
 //
+#include "error_p.h"
+
 #include <string>
 #include <xap/audioio/error.h>
 
@@ -71,6 +73,24 @@ const char* Exception::what() const noexcept {
  */
 uint16_t Exception::get_code() const noexcept {
     return this->m_code;
+}
+
+/**
+ *  Assert PortAudio API calling was succeed.
+ * 
+ *  @throw xap::audioio::Exception
+ *      Raised if PortAudio calling occurred error 
+ *      (xap::audioio::ERROR_PORTAUDIOCALL).
+ *  @param error
+ *      The PortAudio error.
+ */
+void pacall_assert(const PaError &error) {
+    if (error != paNoError) {
+        throw xap::audioio::Exception(
+            Pa_GetErrorText(error),
+            xap::audioio::ERROR_PORTAUDIOCALL
+        );
+    }
 }
 
 }  //  namespace audioio

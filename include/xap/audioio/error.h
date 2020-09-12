@@ -23,8 +23,13 @@ namespace audioio {
 //  Error code.
 const static uint16_t ERROR_PARAMETER        = 5001U;
 const static uint16_t ERROR_PORTAUDIOCALL    = 5002U;
-const static uint16_t ERROR_ALLOC            = 5003U;
-const static uint16_t ERROR_SYSTEMCALL       = 5004U;
+const static uint16_t ERROR_UNSUPPORTED      = 5003U;
+const static uint16_t ERROR_ALLOC            = 5004U;
+const static uint16_t ERROR_SYSTEMCALL       = 5005U;
+const static uint16_t ERROR_INVALIDOPERATION = 5006U;
+const static uint16_t ERROR_UNEXPECTED       = 5007U;
+const static uint16_t ERROR_CALLBACK         = 5008U;
+const static uint16_t ERROR_NODEVICE         = 5008U;
 
 //
 //  Classes.

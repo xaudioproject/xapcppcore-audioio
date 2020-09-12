@@ -12,12 +12,21 @@ add_library(
     ${PROJECT_NAME}
     device.cc
     error.cc
+    player.cc
+    recorder.cc
+    ${CMAKE_BINARY_DIR}/third_party/xapcppcore-bufferutilities/src/buffer.cc
+    ${CMAKE_BINARY_DIR}/third_party/xapcppcore-bufferutilities/src/error.cc
 )
 
 target_include_directories(
     ${PROJECT_NAME} 
     PUBLIC 
     ${CMAKE_BINARY_DIR}/include
+)
+target_include_directories(
+    ${PROJECT_NAME}
+    PRIVATE
+    ${CMAKE_BINARY_DIR}/third_party/xapcppcore-bufferutilities/include
 )
 
 #
@@ -49,8 +58,8 @@ else()
     message(FATAL_ERROR "portaudio Not Found")
 endif()
 
-get_cmake_property(_variableNames VARIABLES)
-list (SORT _variableNames)
-foreach (_variableName ${_variableNames})
-    message(STATUS "${_variableName}=${${_variableName}}")
-endforeach()
+#get_cmake_property(_variableNames VARIABLES)
+#list (SORT _variableNames)
+#foreach (_variableName ${_variableNames})
+#    message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()
