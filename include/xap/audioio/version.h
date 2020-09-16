@@ -10,6 +10,6 @@
 //
 //  Version.
 //
-#define XAP_AUDIOIO_VERSION "1.0.0-alpha1"
+#define XAP_AUDIOIO_VERSION "1.0.0-alpha2"
 
 #endif  //  #ifndef XAP_AUDIOIO_VERSION_H__
