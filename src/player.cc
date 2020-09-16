@@ -497,6 +497,8 @@ static int xap_pa_play_callback(
             //  Do nothing.
         }
     }
+
+    return paContinue;
 }
 
 }  //  namespace audioio
