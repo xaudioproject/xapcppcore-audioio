@@ -23,11 +23,12 @@ namespace audioio {
  *  Input device.
  */
 typedef struct InputDevice_ {
-    int64_t device_id;
-    std::string name;
-    double default_low_latency;
-    double defalut_high_latency;
-    bool is_default;
+    int64_t         device_id;
+    std::string     name;
+    double          default_low_latency;
+    double          defalut_high_latency;
+    bool            is_default;
+    uint8_t         __pad[7];
 } InputDevice;
 
 /**

@@ -23,7 +23,11 @@ namespace audioio {
 typedef struct PlayerOptions_ {
     xap::audioio::OutputDevice device;
     uint8_t                    channel_count;
+    uint8_t                    __pad1[1];
+
     uint16_t                   sample_rate;
+    uint8_t                    __pad2[4];
+
     double                     suggested_latency;
     size_t                     frame_pre_buffer;
 } PlayerOptions;
