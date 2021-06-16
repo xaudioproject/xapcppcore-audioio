@@ -7,7 +7,7 @@ The package implemented cross-platform SDK for audio input/output, including aud
 | Package | Version |
 |---------|---------|
 | PortAudio | &gt;=19.6.0 |
-| xapcppcore-bufferutilities | %gt;=1.0.0-alpha2 |
+| xapcppcore-bufferutilities | &gt;=1.0.0-alpha2 |
 
 ## Build
 
